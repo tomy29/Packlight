@@ -1,0 +1,93 @@
+<div>
+
+    <h2>Hikes</h2>
+
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveHikeModal" ng-click="clear()">
+        <span class="glyphicon glyphicon-flash"></span> Create a new Hike
+    </button>
+    <div class="modal fade" id="saveHikeModal" tabindex="-1" role="dialog" aria-labelledby="myHikeLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="form" role="form" novalidate
+                      class="ng-scope ng-invalid ng-invalid-required ng-dirty ng-valid-minlength"
+                      ng-submit="create()">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myHikeLabel">Create or edit a Hike</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Randonnée</label>
+                            <input type="text" class="form-control" placeholder="Randonnée"
+                                   ng-model="hike.label" >
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label>Ville départ</label>
+                            <input type="text" class="form-control"
+                                   ng-model="hike.startingTown" >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>Durée</label>
+                            <input type="text" class="form-control"
+                                   ng-model="hike.duration" >
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+                        </button>
+                        <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span> Save
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Randonnée</th>
+                    <th>Durée</th>
+                    <th>Ville départ</th>
+                    <th>Date</th>
+                    <th>Poids sac</th>
+                    <th>Poids porté</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="hike in hikes">
+                    <td>{{hike.label}}</td>
+                    <td>{{hike.duration}}</td>
+                    <td>{{hike.startingTown}}</td>
+                    <td>{{hike.date}}</td>
+                    <td>{{hike.weightbag}}</td>
+                    <td>{{hike.weightcarried}}</td>
+                    <td>
+                        <button type="submit"
+                                ng-click="update('/item/'+hike.id)"
+                                class="btn">
+                            <span class="glyphicon glyphicon-pencil"></span> Edit
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(hike.id)"
+                                class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span> Delete
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+{
+  "generator-jhipster": {
+    "baseName": "packlight",
+    "packageName": "com.breizh.packlight",
+    "packageFolder": "com/breizh/packlight",
+    "authenticationType": "cookie",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "useCompass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "javaVersion": "7"
+  }
+}
