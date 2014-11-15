@@ -12,7 +12,7 @@ packlightApp.controller('HikeController', function ($scope, resolvedHike, Hike, 
 
 
         //resolvedHike;
-
+//fdfdfd
 
 
         $scope.create = function () {

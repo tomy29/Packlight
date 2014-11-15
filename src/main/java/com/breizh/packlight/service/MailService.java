@@ -60,6 +60,7 @@ public class MailService {
             message.setSubject(subject);
             message.setText(content, isHtml);
             javaMailSender.send(mimeMessage);
+            //hfhghghg
             log.debug("Sent e-mail to User '{}'!", to);
         } catch (Exception e) {
             log.warn("E-mail could not be sent to user '{}', exception is: {}", to, e.getMessage());
